@@ -17,7 +17,7 @@ const pt = require('path');
                for(d of logdata) {
                 const json = await d;
                 console.log(json);
-                utils.saveToFile(ajson);
+                utils.saveToFile(json);
                 if(!logdata.length) break;
                }
             }
