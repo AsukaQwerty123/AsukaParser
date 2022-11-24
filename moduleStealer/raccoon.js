@@ -1,4 +1,4 @@
-const baseExp = new RegExp('URL: (.+)\nUSER: (.+)\nPASS: (.+)', 'gm');
+const baseExp = new RegExp('URL: (.+)(?:\r|)\nUSER: (.+)(?:\r|)\nPASS: (.+)', 'gm');
 const fs = require('fs/promises');
 const { format } = require('../structures/utils');
 

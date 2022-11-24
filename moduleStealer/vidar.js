@@ -1,4 +1,4 @@
-const baseExp = new RegExp('Host: (.+)\r\nLogin: (.+)\r\nPassword: (.+)', 'gm');
+const baseExp = new RegExp('Host: (.+)(?:\r|)\nLogin: (.+)(?:\r|)\nPassword: (.+)', 'gm');
 const fs = require('fs/promises');
 const { format } = require('../structures/utils');
 
