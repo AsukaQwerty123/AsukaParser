@@ -15,10 +15,11 @@ const pt = require('path');
         if(/assword/.test(pt.basename(path).toLowerCase())) {
             for(module of modules) {
                const logdata = await module.get(path);
+			   if(!logdata) continue;
                for(d of logdata) {
                 const json = await d;
                 console.log(json);
-                utils.saveToFile(json);
+               await utils.saveToFile(json);
                 if(!logdata.length) break;
                }
             }

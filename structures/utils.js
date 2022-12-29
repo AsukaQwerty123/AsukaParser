@@ -40,6 +40,7 @@ class utils {
         await fs.appendFile(path.resolve('DomainDataBase',`${json.hostname}.txt`), `${json.login}:${json.password}\n`).catch(x=>console.log(x));
         const accessURL = global.accessUrl.some(x => json.fullpath.toLowerCase().includes(x.trim()));
         if(accessURL) await fs.appendFile('Access.txt', `==============================\n${json.fullpath}\n${json.login}:${json.password}\n${json.pathFolder}\n`).catch(x=>console.log(x));
+		return null;
        }
 }
 
